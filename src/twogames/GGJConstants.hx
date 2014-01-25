@@ -19,5 +19,9 @@ class GGJConstants
 	public static inline var PLAY_SPACE_HEIGHT:Int = 768;
 
 	//NOTE - Hex grid should have an odd number of columns
-	public static inline var HEX_GRID_COLUMNS:Int = 3;
+	public static inline var HEX_GRID_COLUMNS:Int = 9;
+	public static inline var MIDDLE_COLUMN_INDEX:Int = 4;
+
+	public static inline var GRID_SPACE_WIDTH:Int = 48;
+	public static inline var GRID_SPACE_HEIGHT:Int = 56;
 }

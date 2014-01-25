@@ -48,8 +48,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("gfx/debug/console_play.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("gfx/debug/console_step.png", __ASSET__gfx_debug_console_step_png);
 		type.set ("gfx/debug/console_step.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("gfx/hex.png", __ASSET__gfx_hex_png);
-		type.set ("gfx/hex.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/hex_blue.png", __ASSET__gfx_hex_blue_png);
+		type.set ("gfx/hex_blue.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/hex_brown.png", __ASSET__gfx_hex_brown_png);
+		type.set ("gfx/hex_brown.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/hex_green.png", __ASSET__gfx_hex_green_png);
+		type.set ("gfx/hex_green.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("gfx/player.png", __ASSET__gfx_player_png);
 		type.set ("gfx/player.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("gfx/ui/button_disabled_32x32.png", __ASSET__gfx_ui_button_disabled_32x32_png);
@@ -88,8 +92,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("gfx/debug/console_play.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("gfx/debug/console_step.png", "gfx/debug/console_step.png");
 		type.set ("gfx/debug/console_step.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		path.set ("gfx/hex.png", "gfx/hex.png");
-		type.set ("gfx/hex.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/hex_blue.png", "gfx/hex_blue.png");
+		type.set ("gfx/hex_blue.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/hex_brown.png", "gfx/hex_brown.png");
+		type.set ("gfx/hex_brown.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/hex_green.png", "gfx/hex_green.png");
+		type.set ("gfx/hex_green.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("gfx/player.png", "gfx/player.png");
 		type.set ("gfx/player.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("gfx/ui/button_disabled_32x32.png", "gfx/ui/button_disabled_32x32.png");
@@ -559,7 +567,9 @@ class __ASSET__gfx_debug_console_output_png extends flash.display.BitmapData { p
 class __ASSET__gfx_debug_console_pause_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__gfx_debug_console_play_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__gfx_debug_console_step_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class __ASSET__gfx_hex_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_hex_blue_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_hex_brown_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_hex_green_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__gfx_player_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__gfx_ui_button_disabled_32x32_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__gfx_ui_button_enabled_32x32_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -574,6 +584,8 @@ class __ASSET__font_04b_03___ttf extends flash.text.Font { }
 
 
 #elseif html5
+
+
 
 
 
