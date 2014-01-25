@@ -14,9 +14,8 @@ class GGJGrid
 		{
 			var tilerow:Array<GGJHexTile> = new Array();
 			for (j...this.tilesInColumn(i))
-			{
 				tilerow.add(new GGJHexTile());
-			}
+			tilecolumns[i].add(tilerow);
 		}
 	}
 
