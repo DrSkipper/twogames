@@ -16,12 +16,12 @@
 		{
 			"name": "ExtendedHaxepunk",
 			"follow_symlinks": true,
-			"path": "libraries/ExtendedHaxepunk/src"
+			"path": "lib/ExtendedHaxepunk/src"
 		},
 		{
 			"name": "HaxePunk",
 			"follow_symlinks": true,
-			"path": "libraries/ExtendedHaxepunk/HaxePunk",
+			"path": "lib/ExtendedHaxepunk/HaxePunk",
 			"file_exclude_patterns": [".git", ".gitignore"],
 			"folder_exclude_patterns": ["assets", "examples", "template", "tests", "doc", "tools"]
 		},

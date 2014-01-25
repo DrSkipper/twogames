@@ -48,8 +48,28 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("gfx/debug/console_play.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("gfx/debug/console_step.png", __ASSET__gfx_debug_console_step_png);
 		type.set ("gfx/debug/console_step.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/hex.png", __ASSET__gfx_hex_png);
+		type.set ("gfx/hex.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("gfx/player.png", __ASSET__gfx_player_png);
 		type.set ("gfx/player.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/button_disabled_32x32.png", __ASSET__gfx_ui_button_disabled_32x32_png);
+		type.set ("gfx/ui/button_disabled_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/button_enabled_32x32.png", __ASSET__gfx_ui_button_enabled_32x32_png);
+		type.set ("gfx/ui/button_enabled_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/button_hover_32x32.png", __ASSET__gfx_ui_button_hover_32x32_png);
+		type.set ("gfx/ui/button_hover_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/button_pressed_32x32.png", __ASSET__gfx_ui_button_pressed_32x32_png);
+		type.set ("gfx/ui/button_pressed_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/button_selected_32x32.png", __ASSET__gfx_ui_button_selected_32x32_png);
+		type.set ("gfx/ui/button_selected_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/button_selected_hover_32x32.png", __ASSET__gfx_ui_button_selected_hover_32x32_png);
+		type.set ("gfx/ui/button_selected_hover_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/speech_bubble_corner_8x8.png", __ASSET__gfx_ui_speech_bubble_corner_8x8_png);
+		type.set ("gfx/ui/speech_bubble_corner_8x8.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/speech_bubble_side_horizontal_8x8.png", __ASSET__gfx_ui_speech_bubble_side_horizontal_8x8_png);
+		type.set ("gfx/ui/speech_bubble_side_horizontal_8x8.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("gfx/ui/speech_bubble_side_vertical_8x8.png", __ASSET__gfx_ui_speech_bubble_side_vertical_8x8_png);
+		type.set ("gfx/ui/speech_bubble_side_vertical_8x8.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("font/04B_03__.ttf", __ASSET__font_04b_03___ttf);
 		type.set ("font/04B_03__.ttf", Reflect.field (AssetType, "font".toUpperCase ()));
 		
@@ -68,8 +88,28 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("gfx/debug/console_play.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("gfx/debug/console_step.png", "gfx/debug/console_step.png");
 		type.set ("gfx/debug/console_step.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/hex.png", "gfx/hex.png");
+		type.set ("gfx/hex.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("gfx/player.png", "gfx/player.png");
 		type.set ("gfx/player.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/button_disabled_32x32.png", "gfx/ui/button_disabled_32x32.png");
+		type.set ("gfx/ui/button_disabled_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/button_enabled_32x32.png", "gfx/ui/button_enabled_32x32.png");
+		type.set ("gfx/ui/button_enabled_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/button_hover_32x32.png", "gfx/ui/button_hover_32x32.png");
+		type.set ("gfx/ui/button_hover_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/button_pressed_32x32.png", "gfx/ui/button_pressed_32x32.png");
+		type.set ("gfx/ui/button_pressed_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/button_selected_32x32.png", "gfx/ui/button_selected_32x32.png");
+		type.set ("gfx/ui/button_selected_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/button_selected_hover_32x32.png", "gfx/ui/button_selected_hover_32x32.png");
+		type.set ("gfx/ui/button_selected_hover_32x32.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/speech_bubble_corner_8x8.png", "gfx/ui/speech_bubble_corner_8x8.png");
+		type.set ("gfx/ui/speech_bubble_corner_8x8.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/speech_bubble_side_horizontal_8x8.png", "gfx/ui/speech_bubble_side_horizontal_8x8.png");
+		type.set ("gfx/ui/speech_bubble_side_horizontal_8x8.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("gfx/ui/speech_bubble_side_vertical_8x8.png", "gfx/ui/speech_bubble_side_vertical_8x8.png");
+		type.set ("gfx/ui/speech_bubble_side_vertical_8x8.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("font/04B_03__.ttf", __ASSET__font_04b_03___ttf);
 		type.set ("font/04B_03__.ttf", Reflect.field (AssetType, "font".toUpperCase ()));
 		
@@ -519,11 +559,31 @@ class __ASSET__gfx_debug_console_output_png extends flash.display.BitmapData { p
 class __ASSET__gfx_debug_console_pause_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__gfx_debug_console_play_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__gfx_debug_console_step_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_hex_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__gfx_player_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_button_disabled_32x32_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_button_enabled_32x32_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_button_hover_32x32_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_button_pressed_32x32_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_button_selected_32x32_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_button_selected_hover_32x32_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_speech_bubble_corner_8x8_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_speech_bubble_side_horizontal_8x8_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__gfx_ui_speech_bubble_side_vertical_8x8_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__font_04b_03___ttf extends flash.text.Font { }
 
 
 #elseif html5
+
+
+
+
+
+
+
+
+
+
 
 
 

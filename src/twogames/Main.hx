@@ -7,7 +7,7 @@ import extendedhxpunk.ext.EXTConsole;
 class Main extends Engine
 {
 
-	public static inline var kClearColor:Int = 0xff7777;
+	public static inline var kClearColor:Int = 0x772222;
 	public static inline var kProjectName:String = "GGJ";
 
 	function new()

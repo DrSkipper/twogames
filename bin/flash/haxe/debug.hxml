@@ -7,7 +7,7 @@
 -D web
 -swf-version 11.2
 -swf bin/flash/bin/TwoGames.swf
--swf-header 640:480:30:333333
+-swf-header 1024:768:30:333333
 -cp bin/flash/haxe
 #--remap nme:flash
 --no-inline
