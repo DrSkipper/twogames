@@ -20,7 +20,11 @@ class GGJGameplayScene extends EXTScene
 		super.begin();
 
 		// HUD
-		this.staticUiController.rootView.addSubview(new JVHudView(this.worldCamera));
+		_hudView = new JVHudView(this.worldCamera);
+		_itemView = new GGJGridSpaceItemsView();
+		this.staticUiController.rootView.addSubview(_hudView);
+
+		_hudView.addSubview(_itemView);
 
 		// Tiles
 		this.grid = new GGJGrid();
@@ -34,15 +38,26 @@ class GGJGameplayScene extends EXTScene
 		{
 			var clickedTile:GGJHexTile = cast this.topMostCollidePoint("grid_space", Input.mouseX, Input.mouseY);
 			if (clickedTile != null)
+			{
 				this.selectedTile = clickedTile;
+				var neighbors:Array<GGJHexTile> = grid.neighborsForHexTilePosition(cast clickedTile.gridLocation.x, cast clickedTile.gridLocation.y);
+				for (i in 0...neighbors.length)
+					neighbors[i].turnGreen();
+			}
 		}
 	}
 
 	public function set_selectedTile(tile:GGJHexTile):GGJHexTile
 	{
 		if (selectedTile != null)
-			selectedTile.turnBrown();
-		tile.turnBlue();
+			selectedTile.highlighted = false;
+		tile.highlighted = true;
 		return selectedTile = tile;
 	}
+
+	/**
+	 * Private
+	 */
+	private var _hudView:JVHudView;
+	private var _itemView:GGJGridSpaceItemsView;
 }

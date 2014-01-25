@@ -9,6 +9,7 @@ import twogames.*;
 class GGJHexTile extends Entity
 {
 	public var gridLocation:Point;
+	public var highlighted(default, set):Bool;
 
 	public function new(gridX:Int, gridY:Int)
 	{
@@ -22,15 +23,20 @@ class GGJHexTile extends Entity
 		_brownImage = new Image("gfx/hex_brown.png");
 		_greenImage = new Image("gfx/hex_green.png");
 		_blueImage = new Image("gfx/hex_blue.png");
+		_highlightImage = new Image("gfx/hex_highlight.png");
 		_brownImage.centerOrigin();
 		_greenImage.centerOrigin();
 		_blueImage.centerOrigin();
+		_highlightImage.centerOrigin();
+		_graphicList = new Graphiclist();
+		_graphicList.add(_brownImage);
+
 		gridLocation = new Point(gridX, gridY);
 		var pixelmask:Pixelmask = new Pixelmask("gfx/hex_brown.png", Std.int(-_brownImage.width / 2), Std.int(-_brownImage.height / 2));
 
 		super(screenCenterX + (distanceFromCenterX * GGJConstants.GRID_SPACE_WIDTH), 
 			  screenCenterY + (distanceFromCenterY * GGJConstants.GRID_SPACE_HEIGHT) + yOffset, 
-			  _brownImage);
+			  _graphicList);
 
 		this.type = "grid_space";
 		this.mask = pixelmask;
@@ -38,17 +44,38 @@ class GGJHexTile extends Entity
 
 	public function turnBrown():Void
 	{
-		this.graphic = _brownImage;
+		_graphicList.removeAll();
+		_graphicList.add(_brownImage);
+
+		if (this.highlighted)
+			this.addGraphic(_highlightImage);
 	}
 
 	public function turnGreen():Void
 	{
-		this.graphic = _greenImage;
+		_graphicList.removeAll();
+		_graphicList.add(_greenImage);
+		
+		if (this.highlighted)
+			this.addGraphic(_highlightImage);
 	}
 
 	public function turnBlue():Void
 	{
-		this.graphic = _blueImage;
+		_graphicList.removeAll();
+		_graphicList.add(_blueImage);
+		
+		if (this.highlighted)
+			this.addGraphic(_highlightImage);
+	}
+
+	public function set_highlighted(v:Bool):Bool
+	{
+		if (v && !highlighted)
+			_graphicList.add(_highlightImage);
+		else if (!v && highlighted)
+			_graphicList.remove(_highlightImage);
+		return highlighted = v;
 	}
 
 	/**
@@ -57,4 +84,6 @@ class GGJHexTile extends Entity
 	private var _brownImage:Image;
 	private var _greenImage:Image;
 	private var _blueImage:Image;
+	private var _highlightImage:Image;
+	private var _graphicList:Graphiclist;
 }
