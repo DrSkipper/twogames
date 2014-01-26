@@ -36,7 +36,7 @@ class GGJAttackAction extends GGJGameAction
 
 		for (i in 0..._neighbors.length)
 		{
-			if (targetTile == _neighbors[i] && targetTile.gameObjects.length > 0)
+			if (targetTile != null && targetTile == _neighbors[i] && targetTile.gameObjects.length > 0)
 			{
 				gameObject = targetTile.gameObjects[0];
 				// if (gameObject.ownedPlayerId != _originObject.ownedPlayerId)

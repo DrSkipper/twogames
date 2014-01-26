@@ -30,7 +30,7 @@ class GGJProduceWorkerAction extends GGJGameAction
 		var validTile:Bool = false;
 		for (i in 0..._neighbors.length)
 		{
-			if (targetTile == _neighbors[i] && targetTile.gameObjects.length == 0)
+			if (targetTile != null && targetTile == _neighbors[i] && targetTile.gameObjects.length == 0)
 				validTile = true;
 
 			_neighbors[i].highlighted = false;

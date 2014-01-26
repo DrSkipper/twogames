@@ -240,15 +240,23 @@ class GGJGameplayScene extends EXTScene
 				_gameEnded = true;
 			}
 
-			if (Input.mousePressed)
+			if (Input.mousePressed && !this.ignoreWorldClick())
 			{
 				var clickedTile:GGJHexTile = cast this.topMostCollidePoint("grid_space", Input.mouseX, Input.mouseY);
-				if (clickedTile != null)
-				{
-					_currentTurn.handleTileClick(clickedTile);
-				}
+				_currentTurn.handleTileClick(clickedTile);
 			}
 		}
+	}
+
+	public function ignoreWorldClick():Bool
+	{
+		var views:Array<UIView> = _hudView.copyOfSubviews();
+		for (i in 0...views.length)
+		{
+			if (views[i].mouseIsOverViewOrSubviews)
+				return true;
+		}
+		return false;
 	}
 
 	public function endTurn(args:Array<Dynamic>):Void
