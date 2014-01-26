@@ -12,7 +12,6 @@ class GGJGameObject extends Entity
 	{
 		super();
 		this.ownedPlayerId = playerId;
-		// HXP.scene.add(this);
 	}
 
 	public function gameActionsForImperialistTurn(turn:GGJImperialistTurn):Array<GGJGameAction>

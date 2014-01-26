@@ -47,6 +47,83 @@ class GGJGameplayScene extends EXTScene
 		building = new GGJBuilding(2);
 		var secondBuildingColumn:Array<GGJHexTile> = this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 3];
 		building.tile = secondBuildingColumn[secondBuildingColumn.length - 3];
+
+		// Resources
+		var resource:GGJResources = new GGJResources(0);
+		resource.tile = this.grid.tilecolumns[0][0];
+
+		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		for (i in 0...neighbors.length - 1)
+		{
+			resource = new GGJResources(0);
+			resource.tile = neighbors[i];
+		}
+
+		resource = new GGJResources(0);
+		resource.tile = this.grid.tilecolumns[GGJConstants.MIDDLE_COLUMN_INDEX][0];
+
+		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		for (i in 1...neighbors.length)
+		{
+			resource = new GGJResources(0);
+			resource.tile = neighbors[i];
+		}
+
+		resource = new GGJResources(0);
+		resource.tile = this.grid.tilecolumns[0][this.grid.tilecolumns[0].length - 1];
+
+		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		for (i in 0...neighbors.length)
+		{
+			if (i == 1)
+				continue;
+			resource = new GGJResources(0);
+			resource.tile = neighbors[i];
+		}
+
+		resource = new GGJResources(0);
+		resource.tile = this.grid.tilecolumns[GGJConstants.MIDDLE_COLUMN_INDEX][GGJConstants.MIDDLE_COLUMN_INDEX * 2];
+
+		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		for (i in 1...neighbors.length)
+		{
+			resource = new GGJResources(0);
+			resource.tile = neighbors[i];
+		}
+
+		resource = new GGJResources(0);
+		resource.tile = this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 1][0];
+
+		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		for (i in 0...neighbors.length - 1)
+		{
+			resource = new GGJResources(0);
+			resource.tile = neighbors[i];
+		}
+
+		resource = new GGJResources(0);
+		resource.tile = this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 1][this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 1].length - 1];
+
+		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		for (i in 0...neighbors.length)
+		{
+			if (i == 1)
+				continue;
+			resource = new GGJResources(0);
+			resource.tile = neighbors[i];
+		}
+
+		resource = new GGJResources(0);
+		resource.tile = this.grid.tilecolumns[GGJConstants.MIDDLE_COLUMN_INDEX][GGJConstants.MIDDLE_COLUMN_INDEX];
+
+		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		for (i in 0...neighbors.length)
+		{
+			if (i == 0 || i == 1 || i == 2 || i == 5)
+				continue;
+			resource = new GGJResources(0);
+			resource.tile = neighbors[i];
+		}
 	}
 
 	override public function update():Void
