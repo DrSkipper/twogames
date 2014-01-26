@@ -1,0 +1,20 @@
+Solidarity ideas:
+
+- Horseshoe turn structure?
+- Attack hit percentage?
+- Health? Building's take two attacks?
+- Allow workers to build buildings ($3 mil?)
+- Multiple actions per turn (per unit)?
+- Units of different attack range, health, or movement distance
+- Some units are extra strong against certain units (hard counters)?
+- "Strike" moment/option for workers' team? (all organizers are revealed, and stop taking orders)
+- Different terrain types? Terrain info box that also displays info of object on that spot would be nice.
+- Highlight around units who can still act this turn
+- Black out screen while waiting for next player to sit down and press 'OK'
+- Save game option (and autosave?)
+- 4-player mode?
+- Networking! Also a board game!
+
+For GGJ:
+Name of game and screenshot to:
+cgunarto@gmail.com
