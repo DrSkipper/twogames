@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-	<meta title="TwoGames" package="com.example.app" version="1.0.0" company="" />
+	<meta title="Solidarity" package="com.example.app" version="1.0.0" company="" />
 
- 	<app file="TwoGames" main="twogames.Main" path="bin" />
+ 	<app file="Solidarity" main="twogames.Main" path="bin" />
 
 	<window fps="30" background="0x333333" />
 	<window width="1024" height="768" resizable="true" unless="mobile" />
