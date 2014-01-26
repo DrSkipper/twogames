@@ -48,9 +48,17 @@ class GGJProduceSoldierAction extends GGJGameAction
 			_originObject.hasPerformedAction = true;
 
 			if (_originObject.ownedPlayerId == 1)
+			{
 				--GGJGlobals.blueEmpireMoney;
+				++GGJGlobals.currentBlueObjects;
+				++GGJGlobals.totalCurrentUnits;
+			}
 			else if (_originObject.ownedPlayerId == 2)
+			{
 				--GGJGlobals.redEmpireMoney;
+				++GGJGlobals.currentRedObjects;
+				++GGJGlobals.totalCurrentUnits;
+			}
 		}
 		else
 			_originTile.highlighted = true;

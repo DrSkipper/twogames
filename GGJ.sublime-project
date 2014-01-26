@@ -47,12 +47,20 @@
 			"shell_cmd": "haxelib run openfl test $project_path/project.xml flash -debug"
 		},
 		{
+			"name": "OpenFL Flash Release Test",
+			"shell_cmd": "haxelib run openfl test $project_path/project.xml flash"
+		},
+		{
 			"name": "OpenFL OSX Debug Build",
 			"shell_cmd": "haxelib run openfl build $project_path/project.xml mac -debug"
 		},
 		{
 			"name": "OpenFL OSX Debug Test",
 			"shell_cmd": "haxelib run openfl test $project_path/project.xml mac -debug"
+		},
+		{
+			"name": "OpenFL OSX Release Test",
+			"shell_cmd": "haxelib run openfl test $project_path/project.xml mac"
 		}
 	]
 }

@@ -51,6 +51,7 @@ class GGJOrganizeAction extends GGJGameAction
 			gameObject.organized = true;
 			gameObject.hasPerformedAction = true;
 			_originObject.hasPerformedAction = true;
+			++GGJGlobals.totalOrganizedUnits;
 		}
 		else
 			_originTile.highlighted = true;

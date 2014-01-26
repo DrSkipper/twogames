@@ -50,6 +50,19 @@ class GGJAttackAction extends GGJGameAction
 		{
 			gameObject.tile = null;
 			_originObject.hasPerformedAction = true;
+			if (gameObject.ownedPlayerId == 1)
+			{
+				--GGJGlobals.currentBlueObjects;
+				--GGJGlobals.totalCurrentUnits;
+			}
+			else if (gameObject.ownedPlayerId == 2)
+			{
+				--GGJGlobals.currentRedObjects;
+				--GGJGlobals.totalCurrentUnits;
+			}
+
+			if (gameObject.organized)
+				--GGJGlobals.totalOrganizedUnits;
 		}
 		else
 			_originTile.highlighted = true;

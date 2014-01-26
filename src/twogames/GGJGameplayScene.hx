@@ -15,6 +15,13 @@ class GGJGameplayScene extends EXTScene
 	public function new()
 	{
 		super();
+
+		GGJGlobals.blueEmpireMoney = 0;
+		GGJGlobals.redEmpireMoney = 0;
+		GGJGlobals.totalCurrentUnits = 0;
+		GGJGlobals.totalOrganizedUnits = 0;
+		GGJGlobals.currentRedObjects = 0;
+		GGJGlobals.currentBlueObjects = 0;
 	}
 
 	override public function begin():Void
@@ -50,6 +57,35 @@ class GGJGameplayScene extends EXTScene
 		_hudView.addSubview(_itemView);
 		this.staticUiController.rootView.addSubview(_hudView);
 
+		// Debug labels
+		_totalCurrentUnitsText = new Text("Total Units: " + GGJGlobals.totalCurrentUnits, 0, 0, { "size" : 20, "color" : 0x101010 });
+		var totalCurrentUnitsLabel = new UILabel(new Point(20, 50), _totalCurrentUnitsText);
+		totalCurrentUnitsLabel.offsetAlignmentInParent = EXTOffsetType.TOP_LEFT;
+		totalCurrentUnitsLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_LEFT;
+
+		_totalOrganizedUnitsText = new Text("Organized Units: " + GGJGlobals.totalOrganizedUnits, 0, 0, { "size" : 20, "color" : 0x101010 });
+		var totalOrganizedUnitsLabel = new UILabel(new Point(0, 10), _totalOrganizedUnitsText);
+		totalOrganizedUnitsLabel.offsetAlignmentInParent = EXTOffsetType.BOTTOM_CENTER;
+		totalOrganizedUnitsLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
+		totalCurrentUnitsLabel.addSubview(totalOrganizedUnitsLabel);
+
+		_currentBlueObjectsText = new Text("Blue Objects: " + GGJGlobals.currentBlueObjects, 0, 0, { "size" : 20, "color" : 0x101010 });
+		var currentBlueObjectsLabel = new UILabel(new Point(0, 10), _currentBlueObjectsText);
+		currentBlueObjectsLabel.offsetAlignmentInParent = EXTOffsetType.BOTTOM_CENTER;
+		currentBlueObjectsLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
+		totalOrganizedUnitsLabel.addSubview(currentBlueObjectsLabel);
+
+		_currentRedObjectsText = new Text("Red Objects: " + GGJGlobals.currentRedObjects, 0, 0, { "size" : 20, "color" : 0x101010 });
+		var currentRedObjectsLabel = new UILabel(new Point(0, 10), _currentRedObjectsText);
+		currentRedObjectsLabel.offsetAlignmentInParent = EXTOffsetType.BOTTOM_CENTER;
+		currentRedObjectsLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
+		currentBlueObjectsLabel.addSubview(currentRedObjectsLabel);
+
+		#if debug
+		_hudView.addSubview(totalCurrentUnitsLabel);
+		#end
+
+		// Turn
 		_currentTurn = new GGJImperialistTurn(1, _itemView);
 		_currentPlayerId = 1;
 
@@ -57,10 +93,12 @@ class GGJGameplayScene extends EXTScene
 		this.grid = new GGJGrid();
 		var buildingA:GGJBuilding = new GGJBuilding(1);
 		buildingA.tile = this.grid.tilecolumns[2][2];
+		++GGJGlobals.currentBlueObjects;
 
 		var buildingB:GGJBuilding = new GGJBuilding(2);
 		var secondBuildingColumn:Array<GGJHexTile> = this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 3];
 		buildingB.tile = secondBuildingColumn[secondBuildingColumn.length - 3];
+		++GGJGlobals.currentRedObjects;
 
 		// Resources
 		var resource:GGJResources = new GGJResources(0);
@@ -149,6 +187,8 @@ class GGJGameplayScene extends EXTScene
 			var worker:GGJWorker = new GGJWorker(1);
 			worker.tile = neighbors[i];
 			initialWorkers.push(worker);
+			++GGJGlobals.currentBlueObjects;
+			++GGJGlobals.totalCurrentUnits;
 		}
 
 		neighbors = buildingB.tile.neighbors();
@@ -159,10 +199,13 @@ class GGJGameplayScene extends EXTScene
 			var worker:GGJWorker = new GGJWorker(2);
 			worker.tile = neighbors[i];
 			initialWorkers.push(worker);
+			++GGJGlobals.currentRedObjects;
+			++GGJGlobals.totalCurrentUnits;
 		}
 
 		// One worker begins organized
 		initialWorkers[Std.random(initialWorkers.length)].organized = true;
+		++GGJGlobals.totalOrganizedUnits;
 	}
 
 	override public function update():Void
@@ -171,6 +214,26 @@ class GGJGameplayScene extends EXTScene
 
 		_blueEmpireMoneyText.text = "Blue's bank: $" + GGJGlobals.blueEmpireMoney + " mil";
 		_redEmpireMoneyText.text = "Red's bank: $" + GGJGlobals.redEmpireMoney + " mil";
+		_totalCurrentUnitsText.text = "Total Units: " + GGJGlobals.totalCurrentUnits;
+		_totalOrganizedUnitsText.text = "Organized Units: " + GGJGlobals.totalOrganizedUnits;
+		_currentBlueObjectsText.text = "Blue Objects: " + GGJGlobals.currentBlueObjects;
+		_currentRedObjectsText.text = "Red Objects: " + GGJGlobals.currentRedObjects;
+
+		if (GGJGlobals.totalOrganizedUnits == GGJGlobals.totalCurrentUnits)
+		{
+			_hudView.removeAllSubviews();
+			_hudView.addSubview(new GGJVictoryView(3));
+		}
+		else if (GGJGlobals.currentBlueObjects <= 0)
+		{
+			_hudView.removeAllSubviews();
+			_hudView.addSubview(new GGJVictoryView(2));
+		}
+		else if (GGJGlobals.currentRedObjects <= 0)
+		{
+			_hudView.removeAllSubviews();
+			_hudView.addSubview(new GGJVictoryView(1));
+		}
 
 		if (Input.mousePressed)
 		{
@@ -210,7 +273,7 @@ class GGJGameplayScene extends EXTScene
 			{
 				var tile:GGJHexTile = this.grid.tilecolumns[i][j];
 				tile.highlighted = false;
-				
+
 				for (g in 0...tile.gameObjects.length)
 					tile.gameObjects[g].hasPerformedAction = false;
 			}
@@ -227,4 +290,8 @@ class GGJGameplayScene extends EXTScene
 	private var _currentPlayerText:Text;
 	private var _blueEmpireMoneyText:Text;
 	private var _redEmpireMoneyText:Text;
+	private var _totalCurrentUnitsText:Text;
+	private var _totalOrganizedUnitsText:Text;
+	private var _currentBlueObjectsText:Text;
+	private var _currentRedObjectsText:Text;
 }
