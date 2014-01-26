@@ -19,12 +19,10 @@ class GGJVictoryView extends JVExampleDialog
 		else if (victoriousPlayerId == 2)
 			victoryString = "red wins";
 
-		var okayButton:JVExampleMenuButton = new JVExampleMenuButton(new Point(0, 0), "okay", okayButtonCallback);
-		okayButton.offsetAlignmentInParent = EXTOffsetType.CENTER;
-		okayButton.offsetAlignmentForSelf = EXTOffsetType.CENTER;
+		var okayButton:JVExampleMenuButton = new JVExampleMenuButton(new Point(0, 30), "okay", okayButtonCallback);
 		this.addSubview(okayButton);
 
-		var victoryText:Text = new Text(victoryString, 0, 0, { "size" : 22, "color" : 0xBBBBBB });
+		var victoryText:Text = new Text(victoryString, 0, 0, { "size" : 22, "color" : 0xEEEEEE });
 		var victoryLabel:UILabel = new UILabel(new Point(0, -40), victoryText);
 		this.addSubview(victoryLabel);
 	}

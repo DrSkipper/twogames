@@ -219,28 +219,34 @@ class GGJGameplayScene extends EXTScene
 		_currentBlueObjectsText.text = "Blue Objects: " + GGJGlobals.currentBlueObjects;
 		_currentRedObjectsText.text = "Red Objects: " + GGJGlobals.currentRedObjects;
 
-		if (GGJGlobals.totalOrganizedUnits == GGJGlobals.totalCurrentUnits)
+		if (!_gameEnded)
 		{
-			_hudView.removeAllSubviews();
-			_hudView.addSubview(new GGJVictoryView(3));
-		}
-		else if (GGJGlobals.currentBlueObjects <= 0)
-		{
-			_hudView.removeAllSubviews();
-			_hudView.addSubview(new GGJVictoryView(2));
-		}
-		else if (GGJGlobals.currentRedObjects <= 0)
-		{
-			_hudView.removeAllSubviews();
-			_hudView.addSubview(new GGJVictoryView(1));
-		}
-
-		if (Input.mousePressed)
-		{
-			var clickedTile:GGJHexTile = cast this.topMostCollidePoint("grid_space", Input.mouseX, Input.mouseY);
-			if (clickedTile != null)
+			if (GGJGlobals.totalOrganizedUnits == GGJGlobals.totalCurrentUnits)
 			{
-				_currentTurn.handleTileClick(clickedTile);
+				_hudView.removeAllSubviews();
+				_hudView.addSubview(new GGJVictoryView(3));
+				_gameEnded = true;
+			}
+			else if (GGJGlobals.currentBlueObjects <= 0)
+			{
+				_hudView.removeAllSubviews();
+				_hudView.addSubview(new GGJVictoryView(2));
+				_gameEnded = true;
+			}
+			else if (GGJGlobals.currentRedObjects <= 0)
+			{
+				_hudView.removeAllSubviews();
+				_hudView.addSubview(new GGJVictoryView(1));
+				_gameEnded = true;
+			}
+
+			if (Input.mousePressed)
+			{
+				var clickedTile:GGJHexTile = cast this.topMostCollidePoint("grid_space", Input.mouseX, Input.mouseY);
+				if (clickedTile != null)
+				{
+					_currentTurn.handleTileClick(clickedTile);
+				}
 			}
 		}
 	}
@@ -294,4 +300,5 @@ class GGJGameplayScene extends EXTScene
 	private var _totalOrganizedUnitsText:Text;
 	private var _currentBlueObjectsText:Text;
 	private var _currentRedObjectsText:Text;
+	private var _gameEnded:Bool;
 }
