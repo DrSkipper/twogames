@@ -34,10 +34,10 @@ class JVHudView extends UIView
 		zoomOutButton.offsetAlignmentInParent = EXTOffsetType.TOP_RIGHT;
 		
 		this.addSubview(backButton);
-#if debug
-		this.addSubview(zoomInButton);
-		this.addSubview(zoomOutButton);
-#end
+// #if debug
+// 		this.addSubview(zoomInButton);
+// 		this.addSubview(zoomOutButton);
+// #end
 	}
 	
 	public function backButtonCallback(args:Array<Dynamic>):Void

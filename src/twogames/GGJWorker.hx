@@ -17,6 +17,7 @@ class GGJWorker extends GGJGameObject
 	{
 		var retVal:Array<GGJGameAction> = new Array();
 		retVal.push(new GGJMoveAction(1, this.tile, turn, this));
+		retVal.push(new GGJHarvestAction(1, this.tile, turn, this));
 		return retVal;
 	}
 }

@@ -27,11 +27,25 @@ class GGJGameplayScene extends EXTScene
 		var endTurnButton:JVExampleMenuButton = new JVExampleMenuButton(new Point(30, -30), "end turn", endTurn, new Array());
 		endTurnButton.offsetAlignmentInParent = EXTOffsetType.BOTTOM_LEFT;
 		endTurnButton.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_LEFT;
+
 		_currentPlayerText = new Text("blue empire", 0, 0, { "size" : 20, "color" : 0x101010 });
 		var currentPlayerLabel:UILabel = new UILabel(new Point(0, -10), _currentPlayerText);
 		currentPlayerLabel.offsetAlignmentInParent = EXTOffsetType.TOP_CENTER;
 		currentPlayerLabel.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_CENTER;
 		endTurnButton.addSubview(currentPlayerLabel);
+
+		_blueEmpireMoneyText = new Text("Blue's bank: $" + GGJGlobals.blueEmpireMoney + " mil", 0, 0, { "size" : 20, "color" : 0x101010 });
+		var blueMoneyLabel:UILabel = new UILabel(new Point(-20, 20), _blueEmpireMoneyText);
+		blueMoneyLabel.offsetAlignmentInParent = EXTOffsetType.TOP_RIGHT;
+		blueMoneyLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_RIGHT;
+		_hudView.addSubview(blueMoneyLabel);
+
+		_redEmpireMoneyText = new Text("Red's bank: $" + GGJGlobals.redEmpireMoney + " mil", 0, 0, { "size" : 20, "color" : 0x101010 });
+		var redMoneyLabel:UILabel = new UILabel(new Point(0, 10), _redEmpireMoneyText);
+		redMoneyLabel.offsetAlignmentInParent = EXTOffsetType.BOTTOM_CENTER;
+		redMoneyLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
+		blueMoneyLabel.addSubview(redMoneyLabel);
+
 		_hudView.addSubview(endTurnButton);
 		_hudView.addSubview(_itemView);
 		this.staticUiController.rootView.addSubview(_hudView);
@@ -130,6 +144,9 @@ class GGJGameplayScene extends EXTScene
 	{
 		super.update();
 
+		_blueEmpireMoneyText.text = "Blue's bank: $" + GGJGlobals.blueEmpireMoney + " mil";
+		_redEmpireMoneyText.text = "Red's bank: $" + GGJGlobals.redEmpireMoney + " mil";
+
 		if (Input.mousePressed)
 		{
 			var clickedTile:GGJHexTile = cast this.topMostCollidePoint("grid_space", Input.mouseX, Input.mouseY);
@@ -167,4 +184,6 @@ class GGJGameplayScene extends EXTScene
 	private var _currentTurn:GGJGameTurn;
 	private var _currentPlayerId:Int;
 	private var _currentPlayerText:Text;
+	private var _blueEmpireMoneyText:Text;
+	private var _redEmpireMoneyText:Text;
 }
