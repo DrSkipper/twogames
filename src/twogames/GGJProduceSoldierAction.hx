@@ -1,13 +1,13 @@
 package twogames;
 
-class GGJMoveAction extends GGJGameAction
+class GGJProduceSoldierAction extends GGJGameAction
 {
-	public var moveDistance:Int;
+	public var spawnRange:Int;
 
-	public function new(movableDistance:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
+	public function new(spawnableRange:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
 	{
-		super("move", originTile, turn, originObject);
-		this.moveDistance = movableDistance;
+		super("train soldier", originTile, turn, originObject);
+		this.spawnRange = spawnableRange;
 	}
 
 	override public function activate():Void
@@ -37,7 +37,12 @@ class GGJMoveAction extends GGJGameAction
 		}
 
 		if (validTile)
-			_originObject.tile = targetTile;
+		{
+			var soldier:GGJSoldier = new GGJSoldier();
+			soldier.ownedPlayerId = _originObject.ownedPlayerId;
+			soldier.tile = targetTile;
+
+		}
 		else
 			_originTile.highlighted = true;
 

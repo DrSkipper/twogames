@@ -28,9 +28,12 @@ class GGJGameplayScene extends EXTScene
 
 		// Tiles
 		this.grid = new GGJGrid();
-		var soldier:GGJSoldier = new GGJSoldier();
-		soldier.ownedPlayerId = 1;
-		soldier.tile = this.grid.tilecolumns[0][0];
+		// var soldier:GGJSoldier = new GGJSoldier();
+		// soldier.ownedPlayerId = 1;
+		// soldier.tile = this.grid.tilecolumns[0][0];
+		var building:GGJBuilding = new GGJBuilding();
+		building.ownedPlayerId = 1;
+		building.tile = this.grid.tilecolumns[0][0];
 	}
 
 	override public function update():Void
