@@ -48,12 +48,13 @@ class GGJAttackAction extends GGJGameAction
 
 		if (validTile)
 		{
+			_originObject.tile = gameObject.tile;
 			gameObject.tile = null;
 			_originObject.hasPerformedAction = true;
 			if (gameObject.ownedPlayerId == 1)
 			{
 				--GGJGlobals.currentBlueObjects;
-				
+
 				if (!(Std.is(gameObject, GGJBuilding)))
 					--GGJGlobals.totalCurrentUnits;
 			}
