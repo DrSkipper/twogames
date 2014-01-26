@@ -8,7 +8,6 @@ import twogames.ui.*;
 class GGJGameplayScene extends EXTScene
 {
 	public var grid:GGJGrid;
-	public var selectedTile(default, set):GGJHexTile;
 
 	public function new()
 	{
@@ -23,6 +22,7 @@ class GGJGameplayScene extends EXTScene
 		_hudView = new JVHudView(this.worldCamera);
 		_itemView = new GGJGridSpaceItemsView();
 		this.staticUiController.rootView.addSubview(_hudView);
+		_currentTurn = new GGJImperialistTurn(0, _itemView);
 
 		_hudView.addSubview(_itemView);
 
@@ -39,20 +39,9 @@ class GGJGameplayScene extends EXTScene
 			var clickedTile:GGJHexTile = cast this.topMostCollidePoint("grid_space", Input.mouseX, Input.mouseY);
 			if (clickedTile != null)
 			{
-				this.selectedTile = clickedTile;
-				var neighbors:Array<GGJHexTile> = grid.neighborsForHexTilePosition(cast clickedTile.gridLocation.x, cast clickedTile.gridLocation.y);
-				for (i in 0...neighbors.length)
-					neighbors[i].turnGreen();
+				_currentTurn.handleTileClick(clickedTile);
 			}
 		}
-	}
-
-	public function set_selectedTile(tile:GGJHexTile):GGJHexTile
-	{
-		if (selectedTile != null)
-			selectedTile.highlighted = false;
-		tile.highlighted = true;
-		return selectedTile = tile;
 	}
 
 	/**
@@ -60,4 +49,5 @@ class GGJGameplayScene extends EXTScene
 	 */
 	private var _hudView:JVHudView;
 	private var _itemView:GGJGridSpaceItemsView;
+	private var _currentTurn:GGJGameTurn;
 }

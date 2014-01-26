@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"apply",
+				"applyCameraZoomToGraphiclist	function"
+			],
+			[
+				"appli",
+				"applyCameraZoomToGraphiclist	function"
+			],
+			[
+				"applyCamera",
+				"applyCameraZoomToImage	function"
+			],
+			[
+				"image",
+				"imageForEntity	var"
+			],
+			[
+				"_",
+				"_itemView	var"
+			],
+			[
 				"con",
 				"continue"
 			],
@@ -80,10 +100,6 @@
 				"extendedhxpunk"
 			],
 			[
-				"_",
-				"_patternKeyFramesCompleted	var"
-			],
-			[
 				"JVLev",
 				"JVLevelGenerator"
 			],
@@ -147,7 +163,15 @@
 			"file": "src/twogames/GGJHexTile.hx",
 			"settings":
 			{
-				"buffer_size": 1478,
+				"buffer_size": 2391,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/Graphic.hx",
+			"settings":
+			{
+				"buffer_size": 2559,
 				"line_ending": "Unix"
 			}
 		},
@@ -168,6 +192,14 @@
 			}
 		},
 		{
+			"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/graphics/Graphiclist.hx",
+			"settings":
+			{
+				"buffer_size": 3718,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/Scene.hx",
 			"settings":
 			{
@@ -179,7 +211,7 @@
 			"file": "lib/ExtendedHaxepunk/src/extendedhxpunk/ext/EXTScene.hx",
 			"settings":
 			{
-				"buffer_size": 4610,
+				"buffer_size": 5793,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,7 +219,7 @@
 			"file": "src/twogames/GGJGameplayScene.hx",
 			"settings":
 			{
-				"buffer_size": 696,
+				"buffer_size": 1365,
 				"line_ending": "Unix",
 				"name": "package twogames;"
 			}
@@ -231,6 +263,53 @@
 			{
 				"buffer_size": 1069,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/twogames/ui/GGJGridSpaceItemsView.hx",
+			"settings":
+			{
+				"buffer_size": 381,
+				"line_ending": "Unix",
+				"name": "package twogames.ui;"
+			}
+		},
+		{
+			"file": "src/twogames/GGJGameTurn.hx",
+			"settings":
+			{
+				"buffer_size": 178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "package twogames;\n\nclass GGJImperialistTurn extends GGJGameTurn\n{\n	override public function update():Void\n	{\n\n	}\n\n	override public function actionsForTile(tile:GGJHexTile):Array<GGJGameAction>\n	{\n		return new Array();\n	}\n}\n",
+			"file": "src/twogames/GGJImperialistTurn.hx",
+			"file_size": 70,
+			"file_write_time": 130351668680000000,
+			"settings":
+			{
+				"buffer_size": 223,
+				"line_ending": "Unix",
+				"name": "package twogames;"
+			}
+		},
+		{
+			"file": "src/twogames/GGJGameAction.hx",
+			"settings":
+			{
+				"buffer_size": 246,
+				"line_ending": "Unix",
+				"name": "package twogames;"
+			}
+		},
+		{
+			"file": "src/twogames/GGJMoveAction.hx",
+			"settings":
+			{
+				"buffer_size": 320,
+				"line_ending": "Unix",
+				"name": "package twogames;"
 			}
 		},
 		{
@@ -309,6 +388,13 @@
 	},
 	"file_history":
 	[
+		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/graphics/PreRotation.hx",
+		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/RenderMode.hx",
+		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/graphics/atlas/AtlasRegion.hx",
+		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/graphics/atlas/Atlas.hx",
+		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/Graphic.hx",
+		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/graphics/Graphiclist.hx",
+		"/usr/local/flashpunk/projects/GGJ2014/src/twogames/GGJGameTurn.hx",
 		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/Engine.hx",
 		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/tweens/misc/NumTween.hx",
 		"/usr/local/flashpunk/projects/GGJ2014/lib/ExtendedHaxepunk/HaxePunk/include.xml",
@@ -403,7 +489,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 46.0
 	},
 	"find_in_files":
 	{
@@ -418,6 +504,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"();\n",
+			"graphic",
 			"clicked",
 			"mouse",
 			"collid",
@@ -464,7 +552,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 18,
 			"sheets":
 			[
 				{
@@ -493,7 +581,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -523,7 +611,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
@@ -553,7 +641,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -562,15 +650,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1478,
+						"buffer_size": 2391,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								924,
-								924
+								965,
+								965
 							]
 						],
 						"settings":
@@ -580,14 +668,44 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 112.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/Graphic.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2559,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								893,
+								893
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/masks/Pixelmask.hx",
 					"semi_transient": false,
 					"settings":
@@ -613,11 +731,11 @@
 						"translation.y": 398.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "lib/ExtendedHaxePunk/HaxePunk/com/haxepunk/Entity.hx",
 					"semi_transient": false,
 					"settings":
@@ -629,8 +747,8 @@
 						"selection":
 						[
 							[
-								3314,
-								3314
+								15791,
+								15791
 							]
 						],
 						"settings":
@@ -640,14 +758,44 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1955.0,
+						"translation.y": 9337.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
+					"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/graphics/Graphiclist.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3247,
+								3247
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1981.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/Scene.hx",
 					"semi_transient": false,
 					"settings":
@@ -673,24 +821,24 @@
 						"translation.y": 6304.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "lib/ExtendedHaxepunk/src/extendedhxpunk/ext/EXTScene.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4610,
+						"buffer_size": 5793,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2845,
-								2845
+								5304,
+								5304
 							]
 						],
 						"settings":
@@ -700,27 +848,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1076.0,
+						"translation.y": 2391.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "src/twogames/GGJGameplayScene.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 696,
+						"buffer_size": 1365,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								525,
-								525
+								552,
+								552
 							]
 						],
 						"settings":
@@ -731,14 +879,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 202.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 11,
 					"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/HXP.hx",
 					"semi_transient": false,
 					"settings":
@@ -761,14 +909,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5164.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 12,
 					"file": "lib/ExtendedHaxepunk/HaxePunk/com/haxepunk/utils/Input.hx",
 					"semi_transient": false,
 					"settings":
@@ -794,11 +942,11 @@
 						"translation.y": 198.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 13,
 					"file": "src/twogames/GGJGrid.hx",
 					"semi_transient": false,
 					"settings":
@@ -822,14 +970,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 532.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 14,
 					"file": "src/twogames/ui/JVExampleDialog.hx",
 					"semi_transient": false,
 					"settings":
@@ -855,11 +1003,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 15,
 					"file": "src/twogames/ui/JVExampleMenuButton.hx",
 					"semi_transient": false,
 					"settings":
@@ -889,7 +1037,156 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 16,
+					"file": "src/twogames/ui/GGJGridSpaceItemsView.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"auto_name": "package twogames.ui;",
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "src/twogames/GGJGameTurn.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								178,
+								178
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "src/twogames/GGJImperialistTurn.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								223,
+								223
+							]
+						],
+						"settings":
+						{
+							"auto_name": "package twogames;",
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "src/twogames/GGJGameAction.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								243,
+								243
+							]
+						],
+						"settings":
+						{
+							"auto_name": "package twogames;",
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "src/twogames/GGJMoveAction.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								244,
+								244
+							]
+						],
+						"settings":
+						{
+							"auto_name": "package twogames;",
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
 					"file": "src/twogames/ui/JVHudView.hx",
 					"semi_transient": false,
 					"settings":
@@ -901,8 +1198,8 @@
 						"selection":
 						[
 							[
-								1455,
-								1455
+								1366,
+								1366
 							]
 						],
 						"settings":
@@ -912,14 +1209,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 153.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 22,
 					"file": "lib/ExtendedHaxePunk/HaxePunk/com/haxepunk/graphics/Tilemap.hx",
 					"semi_transient": false,
 					"settings":
@@ -945,11 +1242,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 23,
 					"file": "src/twogames/GGJConstants.hx",
 					"semi_transient": false,
 					"settings":
@@ -975,11 +1272,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 24,
 					"file": "GGJ.sublime-project",
 					"semi_transient": false,
 					"settings":
@@ -1004,11 +1301,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 25,
 					"file": "lib/ExtendedHaxepunk/src/extendedhxpunk/ui/UIView.hx",
 					"semi_transient": false,
 					"settings":
@@ -1020,8 +1317,8 @@
 						"selection":
 						[
 							[
-								2503,
-								2511
+								996,
+								895
 							]
 						],
 						"settings":
@@ -1034,7 +1331,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 15,
 					"type": "text"
 				}
 			]
@@ -1091,12 +1388,52 @@
 		"selected_items":
 		[
 			[
-				"pi",
-				"HaxePunk/com/haxepunk/masks/Pixelmask.hx"
+				"",
+				"ExtendedHaxepunk/extendedhxpunk/ext/EXTScene.hx"
 			],
 			[
-				"",
+				"graphiclis",
+				"HaxePunk/com/haxepunk/graphics/Graphiclist.hx"
+			],
+			[
+				"extsce",
+				"ExtendedHaxepunk/extendedhxpunk/ext/EXTScene.hx"
+			],
+			[
+				"graphicli",
+				"HaxePunk/com/haxepunk/graphics/Graphiclist.hx"
+			],
+			[
+				"graphiclist",
+				"HaxePunk/com/haxepunk/graphics/Graphiclist.hx"
+			],
+			[
+				"grap",
+				"HaxePunk/com/haxepunk/Graphic.hx"
+			],
+			[
+				"entit",
+				"HaxePunk/com/haxepunk/Entity.hx"
+			],
+			[
+				"enti",
+				"Project Files/lib/ExtendedHaxePunk/HaxePunk/com/haxepunk/Entity.hx"
+			],
+			[
+				"ui",
+				"ExtendedHaxepunk/extendedhxpunk/ui/UIView.hx"
+			],
+			[
+				"hextil",
 				"Source/twogames/GGJHexTile.hx"
+			],
+			[
+				"uivi",
+				"ExtendedHaxepunk/extendedhxpunk/ui/UIView.hx"
+			],
+			[
+				"pi",
+				"HaxePunk/com/haxepunk/masks/Pixelmask.hx"
 			],
 			[
 				"pix",
@@ -1105,10 +1442,6 @@
 			[
 				"inpu",
 				"HaxePunk/com/haxepunk/utils/Input.hx"
-			],
-			[
-				"enti",
-				"Project Files/lib/ExtendedHaxePunk/HaxePunk/com/haxepunk/Entity.hx"
 			],
 			[
 				"hxp",
@@ -1125,10 +1458,6 @@
 			[
 				"ent",
 				"Project Files/lib/ExtendedHaxePunk/HaxePunk/com/haxepunk/Entity.hx"
-			],
-			[
-				"uivi",
-				"ExtendedHaxepunk/extendedhxpunk/ui/UIView.hx"
 			],
 			[
 				"uiview",
@@ -1249,10 +1578,6 @@
 			[
 				"pixelma",
 				"HaxePunk/com/haxepunk/masks/Pixelmask.hx"
-			],
-			[
-				"entit",
-				"HaxePunk/com/haxepunk/Entity.hx"
 			],
 			[
 				"conso",

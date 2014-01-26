@@ -16,7 +16,7 @@ class GGJGrid
 			var tilerow:Array<GGJHexTile> = new Array();
 			for (j in 0...this.tilesInColumn(i))
 			{
-				var tile:GGJHexTile = new GGJHexTile(i, j);
+				var tile:GGJHexTile = new GGJHexTile(i, j, this);
 				tilerow.push(tile);
 				HXP.scene.add(tile);
 			}

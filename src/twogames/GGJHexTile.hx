@@ -11,7 +11,7 @@ class GGJHexTile extends Entity
 	public var gridLocation:Point;
 	public var highlighted(default, set):Bool;
 
-	public function new(gridX:Int, gridY:Int)
+	public function new(gridX:Int, gridY:Int, grid:GGJGrid)
 	{
 		var screenCenterX:Int = cast (HXP.screen.width / 2);
 		var screenCenterY:Int = cast (HXP.screen.height / 2);
@@ -20,6 +20,7 @@ class GGJHexTile extends Entity
 		var distanceFromCenterY:Int = cast (gridY - GGJConstants.MIDDLE_COLUMN_INDEX);
 		var yOffset:Int = cast (Math.abs(distanceFromCenterX) * (GGJConstants.GRID_SPACE_HEIGHT * 0.5));
 
+		_grid = grid;
 		_brownImage = new Image("gfx/hex_brown.png");
 		_greenImage = new Image("gfx/hex_green.png");
 		_blueImage = new Image("gfx/hex_blue.png");
@@ -40,6 +41,11 @@ class GGJHexTile extends Entity
 
 		this.type = "grid_space";
 		this.mask = pixelmask;
+	}
+
+	public function neighbors():Array<GGJHexTile>
+	{
+		return _grid.neighborsForHexTilePosition(cast gridLocation.x, cast gridLocation.y);
 	}
 
 	public function turnBrown():Void
@@ -86,4 +92,5 @@ class GGJHexTile extends Entity
 	private var _blueImage:Image;
 	private var _highlightImage:Image;
 	private var _graphicList:Graphiclist;
+	private var _grid:GGJGrid;
 }

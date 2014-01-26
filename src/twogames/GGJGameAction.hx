@@ -4,9 +4,10 @@ class GGJGameAction
 {
 	public var name:String;
 	
-	public function new(actionName:String)
+	public function new(actionName:String, originTile:GGJHexTile)
 	{
 		this.name = actionName;
+		_originTile = originTile;
 	}
 
 	public function activate():Void
@@ -18,4 +19,9 @@ class GGJGameAction
 	{
 		
 	}
+
+	/**
+	 * Private
+	 */
+	private var _originTile:GGJHexTile;
 }
