@@ -11,6 +11,7 @@ class GGJSoldier extends GGJGameObject
 		var myImage:Image = playerId == 1 ? new Image("gfx/hex_soldier_blue.png") : new Image("gfx/hex_soldier_red.png");
 		myImage.centerOrigin();
 		this.graphic = myImage;
+		this.organizable = true;
 	}
 	
 	override public function gameActionsForImperialistTurn(turn:GGJImperialistTurn):Array<GGJGameAction>
@@ -29,6 +30,12 @@ class GGJSoldier extends GGJGameObject
 	override public function gameActionsForWorkersTurn(turn:GGJWorkersTurn):Array<GGJGameAction>
 	{
 		var retVal:Array<GGJGameAction> = new Array();
+		if (this.organized && !this.hasPerformedAction)
+		{
+			retVal.push(new GGJMoveAction(1, this.tile, turn, this));
+			retVal.push(new GGJAttackAction(1, this.tile, turn, this));
+			retVal.push(new GGJOrganizeAction(1, this.tile, turn, this));
+		}
 		return retVal;
 	}
 }

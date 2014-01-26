@@ -32,7 +32,7 @@ class GGJGameTurn
 				_itemView.enableButtons();
 				if (actionResult)
 					this.selectedTile = null;
-				
+
 				this.currentAction = null;
 			}
 			else
@@ -54,12 +54,17 @@ class GGJGameTurn
 		if (tile != null)
 		{
 			tile.highlighted = true;
-			_itemView.updateForGameActions(this.actionsForTile(tile));
+
+			var organizer:Bool = false;
+			if (this.playerId == 3 && tile.gameObjects.length > 0 && tile.gameObjects[0].organized)
+				organizer = true;
+
+			_itemView.updateForGameActions(this.actionsForTile(tile), organizer);
 			_itemView.enableButtons();
 		}
 		else
 		{
-			_itemView.updateForGameActions(null);
+			_itemView.updateForGameActions(null, false);
 		}
 		return selectedTile = tile;
 	}
