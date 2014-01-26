@@ -5,6 +5,7 @@ import twogames.ui.*;
 class GGJGameTurn
 {
 	public var selectedTile(default, set):GGJHexTile;
+	public var currentAction:GGJGameAction;
 
 	public function new(itemView:GGJGridSpaceItemsView)
 	{
@@ -22,6 +23,18 @@ class GGJGameTurn
 			this.selectedTile = tile;
 		else
 		{
+			if (this.currentAction != null)
+			{
+				var actionResult:Bool = this.currentAction.execute(tile);
+
+				_itemView.enableButtons();
+				if (actionResult)
+					this.selectedTile = null;
+			}
+			else
+			{
+				this.selectedTile = null;
+			}
 		}
 	}
 
@@ -38,6 +51,7 @@ class GGJGameTurn
 		{
 			tile.highlighted = true;
 			_itemView.updateForGameActions(this.actionsForTile(tile));
+			_itemView.enableButtons();
 		}
 		else
 		{
@@ -49,6 +63,5 @@ class GGJGameTurn
 	/**
 	 * Private
 	 */
-	private var _currentAction:GGJGameAction;
 	private var _itemView:GGJGridSpaceItemsView;
 }

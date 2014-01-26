@@ -17,7 +17,7 @@ class GGJImperialistTurn extends GGJGameTurn
 
 	override public function actionsForTile(tile:GGJHexTile):Array<GGJGameAction>
 	{
-		var retVal:Array<GGJGameAction> = [new GGJMoveAction(1, tile)];
+		var retVal:Array<GGJGameAction> = [new GGJMoveAction(1, tile, this)];
 		return retVal;
 	}
 

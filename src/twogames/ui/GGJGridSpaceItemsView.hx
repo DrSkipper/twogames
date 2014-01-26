@@ -41,6 +41,19 @@ class GGJGridSpaceItemsView extends JVExampleDialog
 	{
 		var actionForButton:GGJGameAction = cast args[0];
 		actionForButton.activate();
+		this.disableButtons();
+	}
+
+	public function enableButtons():Void
+	{
+		for (i in 0...buttons.length)
+			buttons[i].enabled = true;
+	}
+
+	public function disableButtons():Void
+	{
+		for (i in 0...buttons.length)
+			buttons[i].enabled = false;
 	}
 
 	/**
