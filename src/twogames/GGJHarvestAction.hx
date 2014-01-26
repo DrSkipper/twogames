@@ -49,6 +49,8 @@ class GGJHarvestAction extends GGJGameAction
 		if (validTile)
 		{
 			gameObject.tile = null;
+			_originObject.hasPerformedAction = true;
+			
 			if (_originObject.ownedPlayerId == 1)
 				++GGJGlobals.blueEmpireMoney;
 			else if (_originObject.ownedPlayerId == 2)

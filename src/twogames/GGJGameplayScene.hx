@@ -174,6 +174,16 @@ class GGJGameplayScene extends EXTScene
 			_currentTurn = new GGJImperialistTurn(_currentPlayerId, _itemView);
 			_currentPlayerText.text = "red empire";
 		}
+
+		for (i in 0...this.grid.tilecolumns.length)
+		{
+			for (j in 0...this.grid.tilecolumns[i].length)
+			{
+				var tile:GGJHexTile = this.grid.tilecolumns[i][j];
+				for (g in 0...tile.gameObjects.length)
+					tile.gameObjects[g].hasPerformedAction = false;
+			}
+		}
 	}
 
 	/**

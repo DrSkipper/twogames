@@ -37,7 +37,10 @@ class GGJMoveAction extends GGJGameAction
 		}
 
 		if (validTile)
+		{
 			_originObject.tile = targetTile;
+			_originObject.hasPerformedAction = true;
+		}
 		else
 			_originTile.highlighted = true;
 

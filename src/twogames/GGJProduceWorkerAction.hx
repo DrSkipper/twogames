@@ -44,6 +44,7 @@ class GGJProduceWorkerAction extends GGJGameAction
 		{
 			var worker:GGJWorker = new GGJWorker(_originObject.ownedPlayerId);
 			worker.tile = targetTile;
+			_originObject.hasPerformedAction = true;
 
 			if (_originObject.ownedPlayerId == 1)
 				--GGJGlobals.blueEmpireMoney;

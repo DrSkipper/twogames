@@ -44,6 +44,7 @@ class GGJProduceSoldierAction extends GGJGameAction
 		{
 			var soldier:GGJSoldier = new GGJSoldier(_originObject.ownedPlayerId);
 			soldier.tile = targetTile;
+			_originObject.hasPerformedAction = true;
 
 			if (_originObject.ownedPlayerId == 1)
 				--GGJGlobals.blueEmpireMoney;

@@ -15,9 +15,14 @@ class GGJSoldier extends GGJGameObject
 	
 	override public function gameActionsForImperialistTurn(turn:GGJImperialistTurn):Array<GGJGameAction>
 	{
-		var retVal:Array<GGJGameAction> = new Array();
-		retVal.push(new GGJMoveAction(1, this.tile, turn, this));
-		retVal.push(new GGJAttackAction(1, this.tile, turn, this));
-		return retVal;
+		if (!this.hasPerformedAction)
+		{
+			var retVal:Array<GGJGameAction> = new Array();
+			retVal.push(new GGJMoveAction(1, this.tile, turn, this));
+			retVal.push(new GGJAttackAction(1, this.tile, turn, this));
+			return retVal;
+		}
+		else
+			return super.gameActionsForImperialistTurn(turn);
 	}
 }
