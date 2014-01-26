@@ -23,15 +23,15 @@ class GGJGameObject extends Entity
 
 	public function set_tile(v:GGJHexTile):GGJHexTile
 	{
+		if (tile != null)
+		{
+			tile.removeObjectGraphic(this.graphic);
+			tile.gameObjects.remove(this);
+		}
 		if (v != null)
 		{
 			this.x = v.x;
 			this.y = v.y;
-			if (tile != null)
-			{
-				tile.removeObjectGraphic(this.graphic);
-				tile.gameObjects.remove(this);
-			}
 			v.addObjectGraphic(this.graphic);
 			v.gameObjects.push(this);
 		}

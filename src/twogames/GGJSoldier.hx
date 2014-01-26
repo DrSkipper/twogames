@@ -17,6 +17,7 @@ class GGJSoldier extends GGJGameObject
 	{
 		var retVal:Array<GGJGameAction> = new Array();
 		retVal.push(new GGJMoveAction(1, this.tile, turn, this));
+		retVal.push(new GGJAttackAction(1, this.tile, turn, this));
 		return retVal;
 	}
 }
