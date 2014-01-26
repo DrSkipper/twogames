@@ -6,7 +6,7 @@ class GGJProduceWorkerAction extends GGJGameAction
 
 	public function new(spawnableRange:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
 	{
-		super("+ worker", originTile, turn, originObject);
+		super("+worker $1m", originTile, turn, originObject);
 		this.spawnRange = spawnableRange;
 	}
 
@@ -36,10 +36,19 @@ class GGJProduceWorkerAction extends GGJGameAction
 			_neighbors[i].highlighted = false;
 		}
 
+		if ((_originObject.ownedPlayerId == 1 && GGJGlobals.blueEmpireMoney <= 0) ||
+			(_originObject.ownedPlayerId == 2 && GGJGlobals.redEmpireMoney <= 0))
+			validTile = false;
+		
 		if (validTile)
 		{
 			var worker:GGJWorker = new GGJWorker(_originObject.ownedPlayerId);
 			worker.tile = targetTile;
+
+			if (_originObject.ownedPlayerId == 1)
+				--GGJGlobals.blueEmpireMoney;
+			else if (_originObject.ownedPlayerId == 2)
+				--GGJGlobals.redEmpireMoney;
 		}
 		else
 			_originTile.highlighted = true;

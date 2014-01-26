@@ -6,7 +6,7 @@ class GGJProduceSoldierAction extends GGJGameAction
 
 	public function new(spawnableRange:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
 	{
-		super("+ soldier", originTile, turn, originObject);
+		super("+soldier $1m", originTile, turn, originObject);
 		this.spawnRange = spawnableRange;
 	}
 
@@ -36,10 +36,19 @@ class GGJProduceSoldierAction extends GGJGameAction
 			_neighbors[i].highlighted = false;
 		}
 
+		if ((_originObject.ownedPlayerId == 1 && GGJGlobals.blueEmpireMoney <= 0) ||
+			(_originObject.ownedPlayerId == 2 && GGJGlobals.redEmpireMoney <= 0))
+			validTile = false;
+
 		if (validTile)
 		{
 			var soldier:GGJSoldier = new GGJSoldier(_originObject.ownedPlayerId);
 			soldier.tile = targetTile;
+
+			if (_originObject.ownedPlayerId == 1)
+				--GGJGlobals.blueEmpireMoney;
+			else if (_originObject.ownedPlayerId == 2)
+				--GGJGlobals.redEmpireMoney;
 		}
 		else
 			_originTile.highlighted = true;
