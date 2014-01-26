@@ -41,13 +41,13 @@ class GGJGameplayScene extends EXTScene
 		currentPlayerLabel.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_CENTER;
 		endTurnButton.addSubview(currentPlayerLabel);
 
-		_blueEmpireMoneyText = new Text("Blue's bank: $" + GGJGlobals.blueEmpireMoney + " mil", 0, 0, { "size" : 20, "color" : 0x101010 });
+		_blueEmpireMoneyText = new Text("blue's bank: $" + GGJGlobals.blueEmpireMoney + " mil", 0, 0, { "size" : 20, "color" : 0x101010 });
 		var blueMoneyLabel:UILabel = new UILabel(new Point(-20, 20), _blueEmpireMoneyText);
 		blueMoneyLabel.offsetAlignmentInParent = EXTOffsetType.TOP_RIGHT;
 		blueMoneyLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_RIGHT;
 		_hudView.addSubview(blueMoneyLabel);
 
-		_redEmpireMoneyText = new Text("Red's bank: $" + GGJGlobals.redEmpireMoney + " mil", 0, 0, { "size" : 20, "color" : 0x101010 });
+		_redEmpireMoneyText = new Text("red's bank: $" + GGJGlobals.redEmpireMoney + " mil", 0, 0, { "size" : 20, "color" : 0x101010 });
 		var redMoneyLabel:UILabel = new UILabel(new Point(0, 10), _redEmpireMoneyText);
 		redMoneyLabel.offsetAlignmentInParent = EXTOffsetType.BOTTOM_CENTER;
 		redMoneyLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
@@ -212,8 +212,8 @@ class GGJGameplayScene extends EXTScene
 	{
 		super.update();
 
-		_blueEmpireMoneyText.text = "Blue's bank: $" + GGJGlobals.blueEmpireMoney + " mil";
-		_redEmpireMoneyText.text = "Red's bank: $" + GGJGlobals.redEmpireMoney + " mil";
+		_blueEmpireMoneyText.text = "blue's bank: $" + GGJGlobals.blueEmpireMoney + " mil";
+		_redEmpireMoneyText.text = "red's bank: $" + GGJGlobals.redEmpireMoney + " mil";
 		_totalCurrentUnitsText.text = "Total Units: " + GGJGlobals.totalCurrentUnits;
 		_totalOrganizedUnitsText.text = "Organized Units: " + GGJGlobals.totalOrganizedUnits;
 		_currentBlueObjectsText.text = "Blue Objects: " + GGJGlobals.currentBlueObjects;
