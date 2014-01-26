@@ -6,10 +6,12 @@ class GGJGameTurn
 {
 	public var selectedTile(default, set):GGJHexTile;
 	public var currentAction:GGJGameAction;
+	public var playerId:Int;
 
-	public function new(itemView:GGJGridSpaceItemsView)
+	public function new(playerId_:Int, itemView:GGJGridSpaceItemsView)
 	{
 		_itemView = itemView;
+		this.playerId = playerId_;
 	}
 
 	public function update():Void
@@ -30,6 +32,8 @@ class GGJGameTurn
 				_itemView.enableButtons();
 				if (actionResult)
 					this.selectedTile = null;
+				
+				this.currentAction = null;
 			}
 			else
 			{

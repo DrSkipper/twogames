@@ -10,6 +10,7 @@ class GGJHexTile extends Entity
 {
 	public var gridLocation:Point;
 	public var highlighted(default, set):Bool;
+	public var gameObjects:Array<GGJGameObject>;
 
 	public function new(gridX:Int, gridY:Int, grid:GGJGrid)
 	{
@@ -34,6 +35,7 @@ class GGJHexTile extends Entity
 
 		gridLocation = new Point(gridX, gridY);
 		var pixelmask:Pixelmask = new Pixelmask("gfx/hex_brown.png", Std.int(-_brownImage.width / 2), Std.int(-_brownImage.height / 2));
+		this.gameObjects = new Array();
 
 		super(screenCenterX + (distanceFromCenterX * GGJConstants.GRID_SPACE_WIDTH), 
 			  screenCenterY + (distanceFromCenterY * GGJConstants.GRID_SPACE_HEIGHT) + yOffset, 

@@ -4,9 +4,9 @@ class GGJMoveAction extends GGJGameAction
 {
 	public var moveDistance:Int;
 
-	public function new(movableDistance:Int, originTile:GGJHexTile, turn:GGJGameTurn)
+	public function new(movableDistance:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
 	{
-		super("Move", originTile, turn);
+		super("Move", originTile, turn, originObject);
 		this.moveDistance = movableDistance;
 	}
 
