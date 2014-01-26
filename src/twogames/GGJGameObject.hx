@@ -7,6 +7,7 @@ class GGJGameObject extends Entity
 	public var ownedPlayerId:Int;
 	public var tile(default, set):GGJHexTile;
 	public var hasPerformedAction:Bool;
+	public var organized:Bool;
 
 	public function new(playerId:Int)
 	{
@@ -15,6 +16,12 @@ class GGJGameObject extends Entity
 	}
 
 	public function gameActionsForImperialistTurn(turn:GGJImperialistTurn):Array<GGJGameAction>
+	{
+		var retVal:Array<GGJGameAction> = new Array();
+		return retVal;
+	}
+
+	public function gameActionsForWorkersTurn(turn:GGJWorkersTurn):Array<GGJGameAction>
 	{
 		var retVal:Array<GGJGameAction> = new Array();
 		return retVal;

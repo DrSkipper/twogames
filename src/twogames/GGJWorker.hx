@@ -25,4 +25,17 @@ class GGJWorker extends GGJGameObject
 		else
 			return super.gameActionsForImperialistTurn(turn);
 	}
+
+	override public function gameActionsForWorkersTurn(turn:GGJWorkersTurn):Array<GGJGameAction>
+	{
+		if (!this.hasPerformedAction)
+		{
+			var retVal:Array<GGJGameAction> = new Array();
+			retVal.push(new GGJMoveAction(1, this.tile, turn, this));
+			retVal.push(new GGJHarvestAction(1, this.tile, turn, this));
+			return retVal;
+		}
+		else
+			return super.gameActionsForWorkersTurn(turn);
+	}
 }

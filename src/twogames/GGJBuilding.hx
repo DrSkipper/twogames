@@ -20,4 +20,10 @@ class GGJBuilding extends GGJGameObject
 		retVal.push(new GGJProduceSoldierAction(1, this.tile, turn, this));
 		return retVal;
 	}
+
+	override public function gameActionsForWorkersTurn(turn:GGJWorkersTurn):Array<GGJGameAction>
+	{
+		var retVal:Array<GGJGameAction> = new Array();
+		return retVal;
+	}
 }

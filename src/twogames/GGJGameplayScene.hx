@@ -160,10 +160,9 @@ class GGJGameplayScene extends EXTScene
 	public function endTurn(args:Array<Dynamic>):Void
 	{
 		++_currentPlayerId;
-		if (_currentPlayerId > 2)
+		if (_currentPlayerId > 3)
 			_currentPlayerId = 1;
 
-		//TODO - fcole - 3
 		if (_currentPlayerId == 1)
 		{
 			_currentTurn = new GGJImperialistTurn(_currentPlayerId, _itemView);
@@ -173,6 +172,11 @@ class GGJGameplayScene extends EXTScene
 		{
 			_currentTurn = new GGJImperialistTurn(_currentPlayerId, _itemView);
 			_currentPlayerText.text = "red empire";
+		}
+		else if (_currentPlayerId == 3)
+		{
+			_currentTurn = new GGJWorkersTurn(_currentPlayerId, _itemView);
+			_currentPlayerText.text = "workers";
 		}
 
 		for (i in 0...this.grid.tilecolumns.length)

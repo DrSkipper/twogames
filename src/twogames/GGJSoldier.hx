@@ -25,4 +25,10 @@ class GGJSoldier extends GGJGameObject
 		else
 			return super.gameActionsForImperialistTurn(turn);
 	}
+
+	override public function gameActionsForWorkersTurn(turn:GGJWorkersTurn):Array<GGJGameAction>
+	{
+		var retVal:Array<GGJGameAction> = new Array();
+		return retVal;
+	}
 }

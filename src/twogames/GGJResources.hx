@@ -17,4 +17,9 @@ class GGJResources extends GGJGameObject
 	{
 		return super.gameActionsForImperialistTurn(turn);
 	}
+
+	override public function gameActionsForWorkersTurn(turn:GGJWorkersTurn):Array<GGJGameAction>
+	{
+		return super.gameActionsForWorkersTurn(turn);
+	}
 }
