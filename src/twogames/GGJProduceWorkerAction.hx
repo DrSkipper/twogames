@@ -39,11 +39,12 @@ class GGJProduceWorkerAction extends GGJGameAction
 		if ((_originObject.ownedPlayerId == 1 && GGJGlobals.blueEmpireMoney <= 0) ||
 			(_originObject.ownedPlayerId == 2 && GGJGlobals.redEmpireMoney <= 0))
 			validTile = false;
-		
+
 		if (validTile)
 		{
 			var worker:GGJWorker = new GGJWorker(_originObject.ownedPlayerId);
 			worker.tile = targetTile;
+			worker.hasPerformedAction = true;
 			_originObject.hasPerformedAction = true;
 
 			if (_originObject.ownedPlayerId == 1)

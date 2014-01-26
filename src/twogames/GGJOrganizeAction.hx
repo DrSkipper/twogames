@@ -1,13 +1,13 @@
 package twogames;
 
-class GGJAttackAction extends GGJGameAction
+class GGJOrganizeAction extends GGJGameAction
 {
-	public var attackRange:Int;
+	public var talkRange:Int;
 
-	public function new(attackableRange:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
+	public function new(talkableRange:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
 	{
-		super("attack", originTile, turn, originObject);
-		this.attackRange = attackableRange;
+		super("organize", originTile, turn, originObject);
+		this.talkRange = talkableRange;
 	}
 
 	override public function activate():Void
@@ -21,7 +21,7 @@ class GGJAttackAction extends GGJGameAction
 			if (_neighbors[i].gameObjects.length > 0)
 			{
 				var gameObject:GGJGameObject = _neighbors[i].gameObjects[0];
-				// if (gameObject.ownedPlayerId != _originObject.ownedPlayerId)
+				if (!gameObject.organized && gameObject.organizable)
 					_neighbors[i].highlighted = true;
 			}
 		}
@@ -39,7 +39,7 @@ class GGJAttackAction extends GGJGameAction
 			if (targetTile == _neighbors[i] && targetTile.gameObjects.length > 0)
 			{
 				gameObject = targetTile.gameObjects[0];
-				// if (gameObject.ownedPlayerId != _originObject.ownedPlayerId)
+				if (!gameObject.organized && gameObject.organizable)
 					validTile = true;
 			}
 
@@ -48,7 +48,8 @@ class GGJAttackAction extends GGJGameAction
 
 		if (validTile)
 		{
-			gameObject.tile = null;
+			gameObject.organized = true;
+			gameObject.hasPerformedAction = true;
 			_originObject.hasPerformedAction = true;
 		}
 		else

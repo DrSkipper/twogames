@@ -8,6 +8,7 @@ class GGJGameObject extends Entity
 	public var tile(default, set):GGJHexTile;
 	public var hasPerformedAction:Bool;
 	public var organized:Bool;
+	public var organizable:Bool;
 
 	public function new(playerId:Int)
 	{

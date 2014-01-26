@@ -55,12 +55,12 @@ class GGJGameplayScene extends EXTScene
 
 		// Tiles
 		this.grid = new GGJGrid();
-		var building:GGJBuilding = new GGJBuilding(1);
-		building.tile = this.grid.tilecolumns[2][2];
+		var buildingA:GGJBuilding = new GGJBuilding(1);
+		buildingA.tile = this.grid.tilecolumns[2][2];
 
-		building = new GGJBuilding(2);
+		var buildingB:GGJBuilding = new GGJBuilding(2);
 		var secondBuildingColumn:Array<GGJHexTile> = this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 3];
-		building.tile = secondBuildingColumn[secondBuildingColumn.length - 3];
+		buildingB.tile = secondBuildingColumn[secondBuildingColumn.length - 3];
 
 		// Resources
 		var resource:GGJResources = new GGJResources(0);
@@ -76,7 +76,7 @@ class GGJGameplayScene extends EXTScene
 		resource = new GGJResources(0);
 		resource.tile = this.grid.tilecolumns[GGJConstants.MIDDLE_COLUMN_INDEX][0];
 
-		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		neighbors = resource.tile.neighbors();
 		for (i in 1...neighbors.length)
 		{
 			resource = new GGJResources(0);
@@ -86,7 +86,7 @@ class GGJGameplayScene extends EXTScene
 		resource = new GGJResources(0);
 		resource.tile = this.grid.tilecolumns[0][this.grid.tilecolumns[0].length - 1];
 
-		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		neighbors = resource.tile.neighbors();
 		for (i in 0...neighbors.length)
 		{
 			if (i == 1)
@@ -98,7 +98,7 @@ class GGJGameplayScene extends EXTScene
 		resource = new GGJResources(0);
 		resource.tile = this.grid.tilecolumns[GGJConstants.MIDDLE_COLUMN_INDEX][GGJConstants.MIDDLE_COLUMN_INDEX * 2];
 
-		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		neighbors = resource.tile.neighbors();
 		for (i in 1...neighbors.length)
 		{
 			resource = new GGJResources(0);
@@ -108,7 +108,7 @@ class GGJGameplayScene extends EXTScene
 		resource = new GGJResources(0);
 		resource.tile = this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 1][0];
 
-		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		neighbors = resource.tile.neighbors();
 		for (i in 0...neighbors.length - 1)
 		{
 			resource = new GGJResources(0);
@@ -118,7 +118,7 @@ class GGJGameplayScene extends EXTScene
 		resource = new GGJResources(0);
 		resource.tile = this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 1][this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 1].length - 1];
 
-		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		neighbors = resource.tile.neighbors();
 		for (i in 0...neighbors.length)
 		{
 			if (i == 1)
@@ -130,7 +130,7 @@ class GGJGameplayScene extends EXTScene
 		resource = new GGJResources(0);
 		resource.tile = this.grid.tilecolumns[GGJConstants.MIDDLE_COLUMN_INDEX][GGJConstants.MIDDLE_COLUMN_INDEX];
 
-		var neighbors:Array<GGJHexTile> = resource.tile.neighbors();
+		neighbors = resource.tile.neighbors();
 		for (i in 0...neighbors.length)
 		{
 			if (i == 0 || i == 1 || i == 2 || i == 5)
@@ -138,6 +138,31 @@ class GGJGameplayScene extends EXTScene
 			resource = new GGJResources(0);
 			resource.tile = neighbors[i];
 		}
+
+		// Initial workers
+		var initialWorkers:Array<GGJWorker> = new Array();
+		neighbors = buildingA.tile.neighbors();
+		for (i in 0...neighbors.length)
+		{
+			if (i != 0 && i != 3)
+				continue;
+			var worker:GGJWorker = new GGJWorker(1);
+			worker.tile = neighbors[i];
+			initialWorkers.push(worker);
+		}
+
+		neighbors = buildingB.tile.neighbors();
+		for (i in 0...neighbors.length)
+		{
+			if (i != 1 && i != 4)
+				continue;
+			var worker:GGJWorker = new GGJWorker(2);
+			worker.tile = neighbors[i];
+			initialWorkers.push(worker);
+		}
+
+		// One worker begins organized
+		initialWorkers[Std.random(initialWorkers.length)].organized = true;
 	}
 
 	override public function update():Void
@@ -184,6 +209,8 @@ class GGJGameplayScene extends EXTScene
 			for (j in 0...this.grid.tilecolumns[i].length)
 			{
 				var tile:GGJHexTile = this.grid.tilecolumns[i][j];
+				tile.highlighted = false;
+				
 				for (g in 0...tile.gameObjects.length)
 					tile.gameObjects[g].hasPerformedAction = false;
 			}
