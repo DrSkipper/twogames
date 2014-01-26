@@ -9,11 +9,6 @@ class GGJImperialistTurn extends GGJGameTurn
 		super(playerId_, itemView);
 	}
 
-	override public function update():Void
-	{
-
-	}
-
 	override public function actionsForTile(tile:GGJHexTile):Array<GGJGameAction>
 	{
 		var retVal:Array<GGJGameAction> = new Array();

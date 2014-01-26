@@ -14,11 +14,6 @@ class GGJGameTurn
 		this.playerId = playerId_;
 	}
 
-	public function update():Void
-	{
-
-	}
-
 	public function handleTileClick(tile:GGJHexTile):Void
 	{
 		if (this.selectedTile == null)

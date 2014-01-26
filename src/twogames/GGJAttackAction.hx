@@ -53,12 +53,16 @@ class GGJAttackAction extends GGJGameAction
 			if (gameObject.ownedPlayerId == 1)
 			{
 				--GGJGlobals.currentBlueObjects;
-				--GGJGlobals.totalCurrentUnits;
+				
+				if (!(Std.is(gameObject, GGJBuilding)))
+					--GGJGlobals.totalCurrentUnits;
 			}
 			else if (gameObject.ownedPlayerId == 2)
 			{
 				--GGJGlobals.currentRedObjects;
-				--GGJGlobals.totalCurrentUnits;
+
+				if (!(Std.is(gameObject, GGJBuilding)))
+					--GGJGlobals.totalCurrentUnits;
 			}
 
 			if (gameObject.organized)
