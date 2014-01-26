@@ -31,7 +31,6 @@ class GGJGameplayScene extends EXTScene
 		var soldier:GGJSoldier = new GGJSoldier();
 		soldier.ownedPlayerId = 1;
 		soldier.tile = this.grid.tilecolumns[0][0];
-		this.grid.tilecolumns[0][0].gameObjects.push(soldier);
 	}
 
 	override public function update():Void

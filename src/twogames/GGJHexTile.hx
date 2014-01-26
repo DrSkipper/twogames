@@ -77,6 +77,22 @@ class GGJHexTile extends Entity
 			this.addGraphic(_highlightImage);
 	}
 
+	public function addObjectGraphic(g:Graphic):Void
+	{
+		if (this.highlighted)
+			_graphicList.remove(_highlightImage);
+
+		_graphicList.add(g);
+
+		if (this.highlighted)
+			_graphicList.add(_highlightImage);
+	}
+
+	public function removeObjectGraphic(g:Graphic):Void
+	{
+		_graphicList.remove(g);
+	}
+
 	public function set_highlighted(v:Bool):Bool
 	{
 		if (v && !highlighted)

@@ -21,7 +21,7 @@ class JVHudView extends UIView
 		
 		_camera = camera;
 		
-		var backButton:JVExampleMenuButton = new JVExampleMenuButton(new Point(10, 10), "abort level", backButtonCallback);
+		var backButton:JVExampleMenuButton = new JVExampleMenuButton(new Point(10, 10), "quit", backButtonCallback);
 		backButton.offsetAlignmentForSelf = EXTOffsetType.TOP_LEFT;
 		backButton.offsetAlignmentInParent = EXTOffsetType.TOP_LEFT;
 		
@@ -34,8 +34,10 @@ class JVHudView extends UIView
 		zoomOutButton.offsetAlignmentInParent = EXTOffsetType.TOP_RIGHT;
 		
 		this.addSubview(backButton);
+#if debug
 		this.addSubview(zoomInButton);
 		this.addSubview(zoomOutButton);
+#end
 	}
 	
 	public function backButtonCallback(args:Array<Dynamic>):Void

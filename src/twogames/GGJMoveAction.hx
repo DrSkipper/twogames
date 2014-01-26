@@ -6,7 +6,7 @@ class GGJMoveAction extends GGJGameAction
 
 	public function new(movableDistance:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
 	{
-		super("Move", originTile, turn, originObject);
+		super("move", originTile, turn, originObject);
 		this.moveDistance = movableDistance;
 	}
 
@@ -35,7 +35,9 @@ class GGJMoveAction extends GGJGameAction
 			_neighbors[i].highlighted = false;
 		}
 
-		if (!validTile)
+		if (validTile)
+			_originObject.tile = targetTile;
+		else
 			_originTile.highlighted = true;
 
 		return validTile;

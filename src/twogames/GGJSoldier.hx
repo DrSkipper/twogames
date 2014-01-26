@@ -8,7 +8,9 @@ class GGJSoldier extends GGJGameObject
 	public function new()
 	{
 		super();
-		this.graphic = new Image("gfx/hex_green.png");
+		var myImage:Image = new Image("gfx/hex_green.png");
+		myImage.centerOrigin();
+		this.graphic = myImage;
 	}
 	
 	override public function gameActionsForImperialistTurn(turn:GGJImperialistTurn):Array<GGJGameAction>

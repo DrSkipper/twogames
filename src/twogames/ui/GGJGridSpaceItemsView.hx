@@ -28,7 +28,7 @@ class GGJGridSpaceItemsView extends JVExampleDialog
 		{
 			for (i in 0...gameActions.length)
 			{
-				var button:JVExampleMenuButton = new JVExampleMenuButton(new Point(0, 10 + (30 * i)), gameActions[i].name, activateAction, [gameActions[i]]);
+				var button:JVExampleMenuButton = new JVExampleMenuButton(new Point(0, 20 + (30 * i)), gameActions[i].name, activateAction, [gameActions[i]]);
 				button.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
 				button.offsetAlignmentInParent = EXTOffsetType.TOP_CENTER;
 				this.addSubview(button);
