@@ -8,9 +8,10 @@ class GGJGameObject extends Entity
 	public var tile(default, set):GGJHexTile;
 	public var hasPerformedAction:Bool;
 
-	public function new()
+	public function new(playerId:Int)
 	{
 		super();
+		this.ownedPlayerId = playerId;
 		// HXP.scene.add(this);
 	}
 

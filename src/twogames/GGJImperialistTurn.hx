@@ -20,7 +20,9 @@ class GGJImperialistTurn extends GGJGameTurn
 
 		for (i in 0...tile.gameObjects.length)
 		{
-			retVal = retVal.concat(tile.gameObjects[i].gameActionsForImperialistTurn(this));
+			var gameObject:GGJGameObject = tile.gameObjects[i];
+			if (gameObject.ownedPlayerId == this.playerId)
+				retVal = retVal.concat(tile.gameObjects[i].gameActionsForImperialistTurn(this));
 		}
 
 		return retVal;

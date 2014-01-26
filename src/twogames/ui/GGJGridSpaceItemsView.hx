@@ -9,7 +9,7 @@ class GGJGridSpaceItemsView extends JVExampleDialog
 {
 	public function new()
 	{
-		super(new Point(-20, -20), new Point(180, 240));
+		super(new Point(-15, -15), new Point(170, 200));
 		this.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_RIGHT;
 		this.offsetAlignmentInParent = EXTOffsetType.BOTTOM_RIGHT;
 		buttons = new Array();
@@ -28,7 +28,7 @@ class GGJGridSpaceItemsView extends JVExampleDialog
 		{
 			for (i in 0...gameActions.length)
 			{
-				var button:JVExampleMenuButton = new JVExampleMenuButton(new Point(0, 20 + (30 * i)), gameActions[i].name, activateAction, [gameActions[i]]);
+				var button:JVExampleMenuButton = new JVExampleMenuButton(new Point(0, 20 + (50 * i)), gameActions[i].name, activateAction, [gameActions[i]]);
 				button.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
 				button.offsetAlignmentInParent = EXTOffsetType.TOP_CENTER;
 				this.addSubview(button);

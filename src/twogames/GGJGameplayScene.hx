@@ -1,8 +1,11 @@
 package twogames;
 
+import flash.geom.Point;
 import com.haxepunk.*;
 import com.haxepunk.utils.*;
-import extendedhxpunk.ext.EXTScene;
+import com.haxepunk.graphics.*;
+import extendedhxpunk.ext.*;
+import extendedhxpunk.ui.*;
 import twogames.ui.*;
 
 class GGJGameplayScene extends EXTScene
@@ -21,19 +24,29 @@ class GGJGameplayScene extends EXTScene
 		// HUD
 		_hudView = new JVHudView(this.worldCamera);
 		_itemView = new GGJGridSpaceItemsView();
-		this.staticUiController.rootView.addSubview(_hudView);
-		_currentTurn = new GGJImperialistTurn(0, _itemView);
-
+		var endTurnButton:JVExampleMenuButton = new JVExampleMenuButton(new Point(30, -30), "end turn", endTurn, new Array());
+		endTurnButton.offsetAlignmentInParent = EXTOffsetType.BOTTOM_LEFT;
+		endTurnButton.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_LEFT;
+		_currentPlayerText = new Text("blue empire", 0, 0, { "size" : 20, "color" : 0x101010 });
+		var currentPlayerLabel:UILabel = new UILabel(new Point(0, -10), _currentPlayerText);
+		currentPlayerLabel.offsetAlignmentInParent = EXTOffsetType.TOP_CENTER;
+		currentPlayerLabel.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_CENTER;
+		endTurnButton.addSubview(currentPlayerLabel);
+		_hudView.addSubview(endTurnButton);
 		_hudView.addSubview(_itemView);
+		this.staticUiController.rootView.addSubview(_hudView);
+
+		_currentTurn = new GGJImperialistTurn(1, _itemView);
+		_currentPlayerId = 1;
 
 		// Tiles
 		this.grid = new GGJGrid();
-		// var soldier:GGJSoldier = new GGJSoldier();
-		// soldier.ownedPlayerId = 1;
-		// soldier.tile = this.grid.tilecolumns[0][0];
-		var building:GGJBuilding = new GGJBuilding();
-		building.ownedPlayerId = 1;
-		building.tile = this.grid.tilecolumns[0][0];
+		var building:GGJBuilding = new GGJBuilding(1);
+		building.tile = this.grid.tilecolumns[2][2];
+
+		building = new GGJBuilding(2);
+		var secondBuildingColumn:Array<GGJHexTile> = this.grid.tilecolumns[GGJConstants.HEX_GRID_COLUMNS - 3];
+		building.tile = secondBuildingColumn[secondBuildingColumn.length - 3];
 	}
 
 	override public function update():Void
@@ -50,10 +63,31 @@ class GGJGameplayScene extends EXTScene
 		}
 	}
 
+	public function endTurn(args:Array<Dynamic>):Void
+	{
+		++_currentPlayerId;
+		if (_currentPlayerId > 2)
+			_currentPlayerId = 1;
+
+		//TODO - fcole - 3
+		if (_currentPlayerId == 1)
+		{
+			_currentTurn = new GGJImperialistTurn(_currentPlayerId, _itemView);
+			_currentPlayerText.text = "blue empire";
+		}
+		else if (_currentPlayerId == 2)
+		{
+			_currentTurn = new GGJImperialistTurn(_currentPlayerId, _itemView);
+			_currentPlayerText.text = "red empire";
+		}
+	}
+
 	/**
 	 * Private
 	 */
 	private var _hudView:JVHudView;
 	private var _itemView:GGJGridSpaceItemsView;
 	private var _currentTurn:GGJGameTurn;
+	private var _currentPlayerId:Int;
+	private var _currentPlayerText:Text;
 }

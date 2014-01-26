@@ -1,12 +1,12 @@
 package twogames;
 
-class GGJProduceSoldierAction extends GGJGameAction
+class GGJProduceWorkerAction extends GGJGameAction
 {
 	public var spawnRange:Int;
 
 	public function new(spawnableRange:Int, originTile:GGJHexTile, turn:GGJGameTurn, originObject:GGJGameObject)
 	{
-		super("+ soldier", originTile, turn, originObject);
+		super("+ worker", originTile, turn, originObject);
 		this.spawnRange = spawnableRange;
 	}
 
@@ -38,8 +38,8 @@ class GGJProduceSoldierAction extends GGJGameAction
 
 		if (validTile)
 		{
-			var soldier:GGJSoldier = new GGJSoldier(_originObject.ownedPlayerId);
-			soldier.tile = targetTile;
+			var worker:GGJWorker = new GGJWorker(_originObject.ownedPlayerId);
+			worker.tile = targetTile;
 		}
 		else
 			_originTile.highlighted = true;

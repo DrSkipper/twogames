@@ -13,7 +13,7 @@ class JVExampleMenuButton extends UISmartStretchButton
 {
 	public function new(position:Point, textString:String = null, cb:Array<Dynamic>->Void = null, cbArgs:Array<Dynamic> = null) 
 	{
-		var basicSize:Point = new Point(128, 40);
+		var basicSize:Point = new Point(140, 40);
 		var enabledText:Text = new Text(textString, 0, 0, { "size" : 20, "color" : 0x101010 });
 		super(position, basicSize, 
 			"gfx/ui/button_enabled_32x32.png",
