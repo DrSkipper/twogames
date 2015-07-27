@@ -15,8 +15,8 @@ class GGJConstants
 	
 	//TODO - fcole - Figure out how we're gonna handle different screen sizes
 	//NOTE - Screen size is set in application.xml
-	public static inline var PLAY_SPACE_WIDTH:Int = 1024;
-	public static inline var PLAY_SPACE_HEIGHT:Int = 768;
+	public static inline var PLAY_SPACE_WIDTH:Int = 540; // 1024;
+	public static inline var PLAY_SPACE_HEIGHT:Int = 396; // 768;
 
 	//NOTE - Hex grid should have an odd number of columns
 	public static inline var HEX_GRID_COLUMNS:Int = 13;
